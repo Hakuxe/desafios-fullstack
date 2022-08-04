@@ -1,0 +1,45 @@
+
+form{
+   display: flex;
+   flex-direction: column;
+   margin: 0 auto;
+   max-width: 75%;
+}
+
+.input-group{
+   border: none;
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 1.6rem;
+}
+
+.input-group label{
+   color: var(--white);
+   font-size: 1.2rem;
+   margin-bottom: 0.8rem;
+}
+
+.input-group input{
+   outline: none;
+   border: none;
+   border-bottom: 1px solid var(--white);
+   background-color: transparent;
+   color: var(--white);
+}
+
+form .btn-registration{
+   background-color: var(--dark);
+   color: var(--blue);
+   border: none;
+   
+   max-width: fit-content;
+   padding-inline: 3rem;
+   padding-block: 1rem;
+   margin-top: 4rem;
+   margin-bottom: 4rem;
+   align-self: center;
+
+   font-size: 3.6rem;
+   font-weight: 100;
+   font-family: var(--ff-helvetica-ultralight);
+}

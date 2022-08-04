@@ -1,11 +1,12 @@
+/* Hero ==================== */
 .container {
 	width: 100vw;
 	height: 100vh;
+	overflow-x: hidden;
 }
 
 .container .banner {
 	height: 95vh;
-	padding-inline: 35rem;
 
 	display: grid;
 	grid-template-columns: 1fr;
@@ -25,31 +26,117 @@
 }
 
 #logo {
-	width: 10rem;
+	width: 20%;
 }
 
 .navbar ul {
 	display: flex;
 	gap: 1rem;
 	list-style-type: none;
+	font-family: var(--ff-roboto-regular);
 }
 
 .navbar ul li a {
 	font-size: 1.6rem;
+	font-weight: 100;
 	color: var(--white);
 	text-decoration: none;
 }
 
 .banner-text {
-   align-self: center;
+	align-self: center;
+	font-family: var(--ff-helvetica-ultralight);
 }
 
 .banner-text h1 {
 	font-size: 5.6rem;
+	font-weight: 100;
 	color: var(--white);
 }
 
 .banner-text h3 {
 	font-size: 2.5rem;
+	font-weight: 100;
 	color: var(--white);
+}
+
+/* CADASTRO ============ */
+.section-title {
+	margin-bottom: 4rem;
+	font-size: 3.6rem;
+	text-align: center;
+	font-family: var(--ff-helvetica-ultralight);
+	font-weight: 100;
+}
+
+#registration {
+	background-color: var(--blue);
+	padding-block: 4rem;
+}
+
+#registration .section-title {
+	color: var(--white);
+}
+
+/* Registration List ================ */
+
+#registrationList {
+	padding-block: 4rem;
+}
+
+#registrationList .section-title {
+	color: var(--blue);
+}
+
+#registrationList table {
+	width: 100%;
+	border-collapse: collapse;
+	border-style: hidden;
+	font-size: 1.2rem;
+}
+
+#registrationList table td,
+#registrationList table th {
+	padding-block: 0.8rem;
+	padding-inline: 1rem;
+	/* max-width: 30px; */
+	border: 1px solid var(--blue);
+	text-align: center;
+}
+
+#registrationList table thead {
+	color: var(--dark);
+	text-transform: uppercase;
+	font-family: var(--ff-roboto-regular);
+}
+
+#registrationList table tbody {
+	color: var(--gray);
+	font-family: var(--ff-helvetica-condensed);
+}
+
+/* Footer ================ */
+
+footer {
+	background-image: url(../../assets/rodape-desktop.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	padding-block: 6rem;
+
+	font-family: var(--ff-roboto-light);
+	font-weight: 100;
+}
+
+footer p {
+	color: var(--white);
+	margin-bottom: 1rem;
+
+	font-size: 1.6rem;
+	text-align: center;
 }

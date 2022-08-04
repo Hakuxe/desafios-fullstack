@@ -9,10 +9,47 @@
 
 	--white: #fff;
 
+	--blue: #29abe2;
+	--dark: #012d51;
+	--gray: #808080;
+	/* 
+		-Linhas da tabela: #29abe2
+		-Números da tabela: #012d51
+		-Títulos das colunas da tabela:#012d51
+		-Informações da tabela: #808080 
+	*/
+
+	/* FONTS */
+
+	--ff-roboto-regular: "RobotoRegular", sans-serif;
+	--ff-roboto-light: "RobotoLight", sans-serif;
+	--ff-helvetica-ultralight: "HelveticaUltraLight", sans-serif;
+	--ff-helvetica-condensed: "HelveticaCondensed", sans-serif;
+
+
 	font-size: 62.5%; /* 10px*/
 }
 
+.page-padding {
+	padding-inline: 30rem;
+}
+
 @font-face {
-	font-family: "Helvetica-UltraLight";
-	src: local(Helvetica), url(../assets/fonts/HelveticaUltraLt_0.ttf);
+	font-family: "HelveticaUltraLight";
+	src: local("HelveticaUltraLight"), url("../assets/fonts/HelveticaUltraLt_0.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "HelveticaCondensed";
+	src: local("HelveticaCondensed"), url("../assets/fonts/ps.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "RobotoRegular";
+	src: local("RobotoRegular"), url("../assets/fonts/Roboto-Regular_0.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "RobotoLight";
+	src: local("RobotoLight"), url("../assets/fonts/Roboto-light_0.ttf") format("truetype");
 }
