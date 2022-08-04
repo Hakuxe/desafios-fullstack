@@ -1,0 +1,55 @@
+.container {
+	width: 100vw;
+	height: 100vh;
+}
+
+.container .banner {
+	height: 95vh;
+	padding-inline: 35rem;
+
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+
+	background-image: url("../../assets/index-image.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.banner header {
+	padding-top: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#logo {
+	width: 10rem;
+}
+
+.navbar ul {
+	display: flex;
+	gap: 1rem;
+	list-style-type: none;
+}
+
+.navbar ul li a {
+	font-size: 1.6rem;
+	color: var(--white);
+	text-decoration: none;
+}
+
+.banner-text {
+   align-self: center;
+}
+
+.banner-text h1 {
+	font-size: 5.6rem;
+	color: var(--white);
+}
+
+.banner-text h3 {
+	font-size: 2.5rem;
+	color: var(--white);
+}
