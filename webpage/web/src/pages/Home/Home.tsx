@@ -1,11 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { RegistrationForm } from "../../components/RegistrationFrom/RegistrationFrom";
 
 import logo from "../../assets/logo-in8-dev.svg";
 
 import "./homeStyles.css";
 
+type User = {
+	id: number;
+	name: string;
+	email: string;
+	birthDate: Date;
+	phone: number;
+};
+
+
+const bd = [
+	{
+		id: 1,
+		name: "afdfadf",
+		birthDate: new Date(),
+		phone: 31000000000,
+		email: "fafdsf#@gmgialjaf",
+	},
+	{
+		id: 2,
+		name: "afdfadf",
+		birthDate: new Date(),
+		phone: 31000000000,
+		email: "fafdsf#@gmgialjaf",
+	},
+]
 export const Home = () => {
+	const [users, setUsers] = useState<User[]>(bd);
+
 	return (
 		<main className="container">
 			<section className="banner page-padding">
@@ -48,37 +75,17 @@ export const Home = () => {
 						<th>Telefone</th>
 					</thead>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>afdfadf</td>
-							<td>fafdsf#@gmgialjaf</td>
-							<td>1011121</td>
-							<td>(31)000000000</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					
-						<tr>
-							<td>2</td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					
-					
+						{users.map(user => {
+							return(
+								<tr>
+									<td>{user.id}</td>
+									<td>{user.name}</td>
+									<td>{user.email}</td>
+									<td>{user.birthDate.toUTCString()}</td>
+									<td>{user.phone}</td>
+								</tr>
+							)
+						})}
 					</tbody>
 				</table>
 			</section>
