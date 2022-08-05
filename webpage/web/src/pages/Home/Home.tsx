@@ -1,37 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { RegistrationForm } from "../../components/RegistrationFrom/RegistrationFrom";
 
-import logo from "../../assets/logo-in8-dev.svg";
+import { getAllUsers } from "../../services/api.service";
 
+import logo from "../../assets/logo-in8-dev.svg";
 import "./homeStyles.css";
 
-type User = {
-	id: number;
-	name: string;
-	email: string;
-	birthDate: Date;
-	phone: number;
-};
-
-
-const bd = [
-	{
-		id: 1,
-		name: "afdfadf",
-		birthDate: new Date(),
-		phone: 31000000000,
-		email: "fafdsf#@gmgialjaf",
-	},
-	{
-		id: 2,
-		name: "afdfadf",
-		birthDate: new Date(),
-		phone: 31000000000,
-		email: "fafdsf#@gmgialjaf",
-	},
-]
 export const Home = () => {
-	const [users, setUsers] = useState<User[]>(bd);
+	const [users, setUsers] = useState<User[]>([]);
+
+	useEffect(() => {
+		async function setDataUsers() {
+			const data = await getAllUsers();
+			if(data){
+				setUsers(data);
+			}
+		}
+		setDataUsers();
+	},[])
 
 	return (
 		<main className="container">
@@ -68,23 +54,25 @@ export const Home = () => {
 
 				<table>
 					<thead>
-						<th></th>
-						<th>Nome</th>
-						<th>Email</th>
-						<th>Nascimento</th>
-						<th>Telefone</th>
+						<tr>
+							<th></th>
+							<th>Nome</th>
+							<th>Email</th>
+							<th>Nascimento</th>
+							<th>Telefone</th>
+						</tr>
 					</thead>
 					<tbody>
-						{users.map(user => {
-							return(
-								<tr>
+						{users.map((user) => {
+							return (
+								<tr key={user.id}>
 									<td>{user.id}</td>
 									<td>{user.name}</td>
 									<td>{user.email}</td>
-									<td>{user.birthDate.toUTCString()}</td>
+									<td>{JSON.stringify(user.birthDate)}</td>
 									<td>{user.phone}</td>
 								</tr>
-							)
+							);
 						})}
 					</tbody>
 				</table>
