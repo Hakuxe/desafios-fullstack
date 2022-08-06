@@ -1,11 +1,15 @@
+.page-padding {
+	padding-inline: 30rem;
+}
 /* Hero ==================== */
+
 .container {
 	width: 100vw;
 	height: 100vh;
 	overflow-x: hidden;
 }
 
-.container .banner {
+.container #hero {
 	height: 95vh;
 
 	display: grid;
@@ -18,44 +22,20 @@
 	background-size: cover;
 }
 
-.banner header {
-	padding-top: 3rem;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-#logo {
-	width: 20%;
-}
-
-.navbar ul {
-	display: flex;
-	gap: 1rem;
-	list-style-type: none;
-	font-family: var(--ff-roboto-regular);
-}
-
-.navbar ul li a {
-	font-size: 1.6rem;
-	font-weight: 100;
-	color: var(--white);
-	text-decoration: none;
-}
-
 .banner-text {
 	align-self: center;
+	/* margin-top: 20%; */
 	font-family: var(--ff-helvetica-ultralight);
 }
 
 .banner-text h1 {
-	font-size: 5.6rem;
+	font-size: 7rem;
 	font-weight: 100;
 	color: var(--white);
 }
 
 .banner-text h3 {
-	font-size: 2.5rem;
+	font-size: 3rem;
 	font-weight: 100;
 	color: var(--white);
 }
@@ -82,6 +62,7 @@
 
 #registrationList {
 	padding-block: 4rem;
+	position: relative;
 }
 
 #registrationList .section-title {
@@ -93,13 +74,17 @@
 	border-collapse: collapse;
 	border-style: hidden;
 	font-size: 1.2rem;
+
+	margin-bottom: 4rem;
 }
 
 #registrationList table td,
 #registrationList table th {
 	padding-block: 0.8rem;
 	padding-inline: 1rem;
-	/* max-width: 30px; */
+	max-width: 3rem;
+	height: 5rem;
+
 	border: 1px solid var(--blue);
 	text-align: center;
 }
@@ -113,6 +98,14 @@
 #registrationList table tbody {
 	color: var(--gray);
 	font-family: var(--ff-helvetica-condensed);
+}
+
+#buttonGoTopPage img{
+	max-width: 4rem;
+
+	position: absolute;
+	right: 10%;
+	bottom: 15%;
 }
 
 /* Footer ================ */
@@ -139,4 +132,52 @@ footer p {
 
 	font-size: 1.6rem;
 	text-align: center;
+}
+
+/* Mobile ====================== */
+
+@media (max-width: 1024px) {
+	.page-padding {
+		padding-inline: 4rem;
+	}
+
+	/* hero ======================= */
+	.banner-text {
+		text-align: center;
+		align-self: flex-start;
+		margin-top: 8rem;
+	}
+
+	.banner-text h1 {
+		font-size: 6rem;
+	}
+
+	.banner-text h3 {
+		font-size: 2.5rem;
+	}
+
+	/* Registration ========== */
+
+	#buttonGoTopPage img{
+		display: none;
+	}
+
+}
+
+@media (max-width: 481px) {
+	/* hero ======================= */
+	.container #hero {
+		background-image: url("../../assets/index-image-mobile.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	/* Footer ============= */
+	footer {
+		background-image: url("../../assets/rodape-mobile.jpg");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 }

@@ -30,8 +30,9 @@
 	font-size: 62.5%; /* 10px*/
 }
 
-.page-padding {
-	padding-inline: 30rem;
+
+.hidden{
+	display: none;
 }
 
 @font-face {

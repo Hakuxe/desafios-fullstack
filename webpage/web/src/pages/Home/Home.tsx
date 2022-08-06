@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+
 import { RegistrationForm } from "../../components/RegistrationFrom/RegistrationFrom";
+import { Header } from "../../components/Header/Header";
 
 import { getAllUsers } from "../../services/api.service";
 
-import logo from "../../assets/logo-in8-dev.svg";
+import topoPg from "../../assets/icons/topo-pag.svg";
+
 import "./homeStyles.css";
 
 export const Home = () => {
@@ -12,32 +15,18 @@ export const Home = () => {
 	useEffect(() => {
 		async function setDataUsers() {
 			const data = await getAllUsers();
-			if(data){
+			if (data) {
 				setUsers(data);
 			}
 		}
 		setDataUsers();
-	},[])
+	}, []);
 
 	return (
 		<main className="container">
-			<section className="banner page-padding">
-				<header>
-					<img id="logo" src={logo} alt="logo" />
-					<nav className="navbar">
-						<ul>
-							<li>
-								<a href="">cadastro</a>
-							</li>
-							<li>
-								<a href="">lista</a>
-							</li>
-							<li>
-								<a href="">sobre min</a>
-							</li>
-						</ul>
-					</nav>
-				</header>
+			<section id="hero" className="page-padding">
+				<Header />
+
 				<div className="banner-text">
 					<h1>ESTÁGIO</h1>
 					<h3>PROVA DE SELEÇÃO</h3>
@@ -76,9 +65,13 @@ export const Home = () => {
 						})}
 					</tbody>
 				</table>
+
+				<a id="buttonGoTopPage"  href="#hero">
+					<img src={topoPg} alt="" />
+				</a>
 			</section>
 
-			<footer>
+			<footer id="about">
 				<div>
 					<p>Fulano Beltrano Oliveira Silva</p>
 					<p>fulanobos@gmail.com</p>
