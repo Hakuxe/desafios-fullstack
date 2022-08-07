@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.json());
 
-app.listen(PORT, () => console.log("server rodando..."));
+app.listen(PORT, () => console.log("\nserver rodando..."));
 
 
 app.get("/all", (request, response) => {
@@ -15,14 +15,14 @@ app.get("/all", (request, response) => {
 });
 
 app.post("/user", (request, response) =>{
-   const {user} = request.body;
+   const {name, email, phone, birthDate} = request.body;
 
    const newItem = {
       id: database.length + 1,
-		name: user.name,
-		birthDate: new Date(user.birthDate),
-		phone: user.phone,
-		email: user.email,
+		name: name,
+		birthDate: new Date(birthDate),
+		phone: phone,
+		email: email,
    }
 
    database.push(newItem);
