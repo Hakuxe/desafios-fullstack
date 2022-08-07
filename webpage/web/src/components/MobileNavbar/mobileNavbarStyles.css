@@ -1,0 +1,33 @@
+.mobile-navbar {
+   width: 30rem;
+	padding-inline: 4rem;
+	padding-block: 3rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	background-color: var(--blue);
+}
+
+.mobile-navbar ul {
+   list-style: none;
+   
+	display: flex;
+	flex-direction: column;
+}
+
+.mobile-navbar ul li {
+	margin-bottom: 2rem;
+}
+
+.mobile-navbar ul .menu-button {
+	margin-bottom: 5rem;
+}
+
+.mobile-navbar ul li a {
+   font-family: var(--ff-roboto-regular);
+	font-size: 1.6rem;
+	font-weight: 100;
+	color: var(--white);
+	text-decoration: none;
+}
