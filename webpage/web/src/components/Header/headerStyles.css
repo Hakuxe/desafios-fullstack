@@ -21,6 +21,10 @@ header {
 	font-family: var(--ff-roboto-regular);
 }
 
+.navbar ul li:first-child{
+	border-bottom: 0.5px solid var(--white);
+}
+
 .navbar ul li a {
 	font-size: 1.6rem;
 	font-weight: 100;
