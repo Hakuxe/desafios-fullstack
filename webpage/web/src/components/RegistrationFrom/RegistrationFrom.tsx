@@ -67,6 +67,8 @@ export const RegistrationForm = (props: Props) => {
 					id="phone"
 					name="phone"
 					type={"tel"}
+					maxLength={11}
+					placeholder="31988888888"
 					onChange={handleChange}
 				/>
 			</fieldset>

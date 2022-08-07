@@ -9,6 +9,7 @@ import topoPg from "../../assets/icons/topo-pag.svg";
 
 import "./homeStyles.css";
 import { formatDateToString } from "../../helpers/dateHelpers";
+import { formatPhoneNumberToString } from "../../helpers/phoneHelper";
 
 export const Home = () => {
 	const [users, setUsers] = useState<User[]>([]);
@@ -75,13 +76,14 @@ export const Home = () => {
 					<tbody>
 						{users.map((user) => {
 							const formatedDate = formatDateToString(user.birthDate);
+							const formatedPhone =formatPhoneNumberToString(user.phone.toString())
 							return (
 								<tr key={user.id}>
 									<td>{user.id}</td>
 									<td>{user.name}</td>
 									<td>{user.email}</td>
 									<td>{formatedDate}</td>
-									<td>{user.phone}</td>
+									<td>{formatedPhone}</td>
 								</tr>
 							);
 						})}

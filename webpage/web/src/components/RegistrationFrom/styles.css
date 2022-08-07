@@ -4,6 +4,8 @@ form{
    flex-direction: column;
    margin: 0 auto;
    max-width: 75%;
+
+   font-family: var(--ff-helvetica-condensed);
 }
 
 .input-group{
