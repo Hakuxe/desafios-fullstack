@@ -8,6 +8,7 @@ import { createUser, getAllUsers } from "../../services/api.service";
 import topoPg from "../../assets/icons/topo-pag.svg";
 
 import "./homeStyles.css";
+import { formatDateToString } from "../../helpers/dateHelpers";
 
 export const Home = () => {
 	const [users, setUsers] = useState<User[]>([]);
@@ -73,12 +74,13 @@ export const Home = () => {
 					</thead>
 					<tbody>
 						{users.map((user) => {
+							const formatedDate = formatDateToString(user.birthDate);
 							return (
 								<tr key={user.id}>
 									<td>{user.id}</td>
 									<td>{user.name}</td>
 									<td>{user.email}</td>
-									<td>{user.birthDate}</td>
+									<td>{formatedDate}</td>
 									<td>{user.phone}</td>
 								</tr>
 							);
