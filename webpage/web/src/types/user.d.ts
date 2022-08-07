@@ -1,7 +1,7 @@
 interface User {
-	id: number;
+	id?: number; //criado no backend
 	name: string;
 	email: string;
-	birthDate: Date;
+	birthDate: string;
 	phone: number;
 }

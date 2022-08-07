@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { RegistrationForm } from "../../components/RegistrationFrom/RegistrationFrom";
 import { Header } from "../../components/Header/Header";
 
-import { getAllUsers } from "../../services/api.service";
+import { createUser, getAllUsers } from "../../services/api.service";
 
 import topoPg from "../../assets/icons/topo-pag.svg";
 
@@ -11,6 +11,7 @@ import "./homeStyles.css";
 
 export const Home = () => {
 	const [users, setUsers] = useState<User[]>([]);
+	const [shouldUpdateList, setShouldUpdateList] = useState(false);
 
 	useEffect(() => {
 		async function setDataUsers() {
@@ -21,6 +22,25 @@ export const Home = () => {
 		}
 		setDataUsers();
 	}, []);
+
+	useEffect(() => {
+		async function setDataUsers() {
+			const data = await getAllUsers();
+			if (data) {
+				setUsers(data);
+			}
+		}
+		setDataUsers();
+	}, [shouldUpdateList]);
+
+	async function handleCreateNewUser(newUser: User) {
+		const response = await createUser(newUser);
+
+		if (response.status === 200) {
+			setShouldUpdateList((prevState) => !prevState);
+			alert(response.data);
+		}
+	}
 
 	return (
 		<main className="container">
@@ -35,7 +55,7 @@ export const Home = () => {
 
 			<section id="registration" className="page-padding">
 				<h2 className="section-title">CADASTRO</h2>
-				<RegistrationForm />
+				<RegistrationForm handleCreateNewUser={handleCreateNewUser} />
 			</section>
 
 			<section id="registrationList" className="page-padding">
@@ -58,7 +78,7 @@ export const Home = () => {
 									<td>{user.id}</td>
 									<td>{user.name}</td>
 									<td>{user.email}</td>
-									<td>{JSON.stringify(user.birthDate)}</td>
+									<td>{user.birthDate}</td>
 									<td>{user.phone}</td>
 								</tr>
 							);
@@ -66,7 +86,7 @@ export const Home = () => {
 					</tbody>
 				</table>
 
-				<a id="buttonGoTopPage"  href="#hero">
+				<a id="buttonGoTopPage" href="#hero">
 					<img src={topoPg} alt="" />
 				</a>
 			</section>
